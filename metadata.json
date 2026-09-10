@@ -1,0 +1,6 @@
+{
+  "name": "LocaFleet - Gestion de Flotte & Location",
+  "description": "Logiciel de gestion de flotte de véhicules et cycle de location avec check-in/out, contrats et facturation PDF.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

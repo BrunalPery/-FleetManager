@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --theme-color: #2563eb;
+    --theme-color-light: #eff6ff;
+    --theme-color-border: #bfdbfe;
+    --theme-color-dark: #1e40af;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-slate-50/70 text-slate-800 selection:bg-slate-800 selection:text-white;
+  }
+}
+
+/* Software Dynamic Theme Icons & Accents */
+.theme-icon,
+[data-theme-icon="true"],
+.theme-accent-icon,
+.theme-color-text {
+  color: var(--theme-color, #2563eb) !important;
+}
+
+.theme-bg-light {
+  background-color: var(--theme-color-light, #eff6ff) !important;
+}
+
+.theme-border {
+  border-color: var(--theme-color-border, #bfdbfe) !important;
+}
+
+.theme-bg-solid {
+  background-color: var(--theme-color, #2563eb) !important;
+}
+
+/* When theme icon coloring is active on application, brand icons & primary accent icons take the active theme */
+[data-theme-active="true"] .app-brand-icon,
+[data-theme-active="true"] .theme-icon,
+[data-theme-active="true"] [data-theme-icon="true"],
+[data-theme-active="true"] .nav-active-icon,
+[data-theme-active="true"] svg.text-blue-600,
+[data-theme-active="true"] svg.text-indigo-600,
+[data-theme-active="true"] span.text-blue-600,
+[data-theme-active="true"] span.text-indigo-600,
+[data-theme-active="true"] button > svg.text-blue-600,
+[data-theme-active="true"] button > svg.text-indigo-600 {
+  color: var(--theme-color, #2563eb) !important;
+}
+
+[data-theme-active="true"] .bg-blue-50,
+[data-theme-active="true"] .bg-indigo-50 {
+  background-color: var(--theme-color-light, #eff6ff) !important;
+}
+
+[data-theme-active="true"] .border-blue-200,
+[data-theme-active="true"] .border-indigo-200,
+[data-theme-active="true"] .border-blue-100 {
+  border-color: var(--theme-color-border, #bfdbfe) !important;
+}
+
+/* Hide scrollbar for clean horizontal carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Soft transition utilities */
+.soft-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease-in-out;
+}
+
+.soft-card:hover {
+  border-color: rgba(203, 213, 225, 0.9);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+}
